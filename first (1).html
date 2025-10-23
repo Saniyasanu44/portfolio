@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>For My Love</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: #fff;
+    }
+
+    nav {
+      background: #c0392b;
+      color: white;
+      padding: 15px;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .hero {
+      background: linear-gradient(to right,#96fbc4, #f9f586);
+      color: #2c3e50;
+      padding: 60px 20px;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .message {
+      background: #ecf0f1;
+      color: #34495e;
+      padding: 40px 20px;
+    }
+
+    .message h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .message p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    button#send-reply {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+button#send-reply:hover {
+  background: #1e8449;
+}
+
+    }
+
+    button.love-btn:hover {
+      background: #c0392b;
+    }
+
+    .reply-section {
+      margin-top: 40px;
+      background: #f7f9fa;
+      padding: 30px 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: left;
+      color: #2c3e50;
+    }
+
+    textarea#reply-message {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      margin-bottom: 15px;
+    }
+
+    button#send-reply {
+      background: #27ae60;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    button#send-reply:hover {
+      background: #1e8449;
+    }
+
+    #received-message {
+      margin-top: 20px;
+      padding: 15px;
+      background: #dff0d8;
+      border-radius: 6px;
+      font-style: italic;
+      border: 1px solid #a3c293;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 12px;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .hero, .message, .reply-section {
+        padding: 30px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>For My Love ❤️</h1>
+  </nav>
+
+  <section class="hero">
+    <h2>Hey, Handsome!</h2>
+    <p> Created with love, just to make you smile today🥹🥹🥹😘😘💖💖</p>
+    <button class="love-btn" onclick="showLove()">I Love You 💖</button>
+  </section>
+
+  <section class="message" id="message-section" style="display:none;">
+    <h3>You're My Everything</h3>
+    <p>
+      I may not be the best coder yet, but I wanted to create something simple and meaningful just for you.  
+      Every word, every line of this page was made with love — the same love I feel for you every single day.  
+      You're my sunshine, my peace, my reason to smile. I can't wait to build a beautiful life together. 💍
+    </p>
+  </section>
+
+  <section class="reply-section">
+    <h3>Your Message to Me</h3>
+    <textarea id="reply-message" placeholder="Write your message here..." rows="5"></textarea>
+    <br>
+    <button id="send-reply" onclick="sendReply()">Send Message</button>
+
+    <div id="received-message" style="display:none;"></div>
+  </section>
+
+  <footer>
+    © 2025 With Love | Created on Android 💌
+  </footer>
+
+  <script>
+    function showLove() {
+      const message = document.getElementById('message-section');
+      if (message.style.display === 'none') {
+        message.style.display = 'block';
+        window.scrollTo({ top: message.offsetTop, behavior: 'smooth' });
+      } else {
+        message.style.display = 'none';
+      }
+    }
+
+    function sendReply() {
+      const textarea = document.getElementById('reply-message');
+      const receivedDiv = document.getElementById('received-message');
+      const text = textarea.value.trim();
+
+      if (!text) {
+        alert('Please write a message before sending!');
+        return;
+      }
+
+      receivedDiv.style.display = 'block';
+      receivedDiv.textContent = `💌 Your message: "${text}"`;
+      textarea.value = '';
+      alert('LOVE YOU BE😘 ❤️');
+      receivedDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+
+</body></html>
